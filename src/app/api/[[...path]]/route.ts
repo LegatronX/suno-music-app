@@ -85,15 +85,16 @@ app.get('/auth/verify', async (c) => {
     }
 
     const result = await handleVerifyMagicLink(c.env, token);
-    
+
     if (!result.success) {
       return c.json({ error: result.error }, 400);
     }
 
     // Définir le cookie de session
+    const isSecure = new URL(c.req.url).protocol === 'https:';
     setCookie(c, 'session_id', result.sessionId!, {
       httpOnly: true,
-      secure: true,
+      secure: isSecure,
       sameSite: 'Lax',
       maxAge: 30 * 24 * 60 * 60, // 30 jours
     });
@@ -113,9 +114,10 @@ app.post('/auth/logout', async (c) => {
       await deleteSession(c.env, sessionId);
     }
 
+    const isSecure = new URL(c.req.url).protocol === 'https:';
     setCookie(c, 'session_id', '', {
       httpOnly: true,
-      secure: true,
+      secure: isSecure,
       sameSite: 'Lax',
       maxAge: 0,
     });

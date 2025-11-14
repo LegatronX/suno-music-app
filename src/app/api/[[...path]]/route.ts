@@ -29,7 +29,11 @@ import {
 
 export const runtime = 'edge';
 
-const app = new Hono<{ Bindings: Env }>().basePath('/api');
+type Variables = {
+  userId: string;
+};
+
+const app = new Hono<{ Bindings: Env; Variables: Variables }>().basePath('/api');
 
 // CORS middleware
 app.use('/*', cors({

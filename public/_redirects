@@ -1,0 +1,5 @@
+# Redirection des routes API vers le worker
+/api/*  https://suno-music-api.VOTRE-COMPTE.workers.dev/:splat  200
+
+# SPA fallback pour Next.js
+/*  /index.html  200

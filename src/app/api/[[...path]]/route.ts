@@ -8,7 +8,7 @@ import {
   CreateTrackSchema,
 } from '@suno-music-app/shared/index';
 import {
-import { getProjectsByUserId, createProject, getProjectById, getTracksByProjectId, createTrack, getTrackById, updateTrack, addFavorite, removeFavorite, getFavoritesByUserId, getUserById } from '@/lib/server/db';tions/api/db';
+import { getProjectsByUserId, createProject, getProjectById, getTracksByProjectId, createTrack, getTrackById, updateTrack, addFavorite, removeFavorite, getFavoritesByUserId, getUserById } from '@/lib/server/db';
 import {
 import { handleLogin, handleVerifyMagicLink, getUserFromSession, deleteSession } from '@/lib/server/auth';
 

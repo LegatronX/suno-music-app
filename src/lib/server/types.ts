@@ -1,3 +1,5 @@
+import type { D1Database, KVNamespace } from '@cloudflare/workers-types';
+
 export interface Env {
   // D1 Database
   DB: D1Database;

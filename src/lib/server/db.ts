@@ -1,3 +1,4 @@
+import type { D1Database } from '@cloudflare/workers-types';
 import type { Env } from './types';
 import type { User, Project, Track, Favorite } from '@suno-music-app/shared/index';
 

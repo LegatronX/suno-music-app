@@ -1,5 +1,6 @@
 import type { Env } from './types';
 import type { User, Project, Track, Favorite } from '@suno-music-app/shared/index';
+import type { D1Database } from '@cloudflare/workers-types';
 
 /**
  * Génère un ID unique simple
